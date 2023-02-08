@@ -43,11 +43,7 @@
       style="width: 100%; height: 100%"
     ></iframe>
 
-
-    
-
     <script>
-
       const btn = document.getElementById("send");
       const modal = document.querySelector("iframe");
 
@@ -61,6 +57,9 @@
 
       // listen for message from iframe
       window.addEventListener("message", (e) => {
+        if (e.data === "close") {
+          toggle();
+        }
         console.log(e.data);
       });
     </script>
